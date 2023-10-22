@@ -11,13 +11,13 @@ import java.util.TimerTask;
 
 public class AppTimeline {
     private static int currentTick = 0;
-    private static List<AbstractCharacter> characterList;
+    private final List<AbstractCharacter> characterList;
 
     public AppTimeline(List<AbstractCharacter> characterList) {
         this.characterList = characterList;
     }
 
-    public static void run() {
+    public void run() {
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             @Override
@@ -44,7 +44,7 @@ public class AppTimeline {
     }
 
 
-    public static HourCode getHourStatus(int hour) {
+    public HourCode getHourStatus(int hour) {
        return Schedule.getHourStatus(hour);
     }
 }
