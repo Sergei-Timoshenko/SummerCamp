@@ -11,7 +11,7 @@ import characters.roles.Roles;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Character implements Conductor, Actions, ActionCreator {
+public abstract class MyCharacter implements Conductor, Actions, ActionCreator {
     protected String name;
     protected Enum<Roles> role;
     protected ArrayList<Need> needs = new ArrayList<>();

@@ -3,13 +3,19 @@ package timeline;
 import timeline.schedule.HourStatuses;
 import timeline.schedule.Schedule;
 import utils.Constants;
+import characters.*;
 
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Timeline {
+public class AppTimeline {
     private static int currentTick = 0;
-    private static Enum<HourStatuses> hourStatus;
+    private static List<MyCharacter> characterList;
+
+    public AppTimeline(List<MyCharacter> characterList) {
+        this.characterList = characterList;
+    }
 
     public static void run() {
         Timer timer = new Timer();
@@ -23,7 +29,11 @@ public class Timeline {
                 }
                 if (!isFinalTick && currentTick % Constants.TICKS_IN_HOUR == 0 ) {
                     int hour = currentTick / Constants.TICKS_IN_HOUR;
-                    setHourStatus(hour);
+                    HourStatuses hourStatus = getHourStatus(hour);
+                    for (MyCharacter character : characterList){
+                        character.doAction(hourStatus);
+                    }
+
                     System.out.println("Tick " + currentTick + " (" + hour + ") : " + hourStatus);
                 }
                 currentTick++;
@@ -34,8 +44,8 @@ public class Timeline {
     }
 
 
-    public static void setHourStatus(int hour) {
-        Timeline.hourStatus = Schedule.getHourStatus(hour);
+    public static HourStatuses getHourStatus(int hour) {
+       return Schedule.getHourStatus(hour);
     }
 }
 
