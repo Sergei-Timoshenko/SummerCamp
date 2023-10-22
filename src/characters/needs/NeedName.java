@@ -1,4 +1,4 @@
 package characters.needs;
 
-public interface NeedType {
+public interface NeedName {
 }

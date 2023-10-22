@@ -3,23 +3,23 @@ package characters;
 import characters.interfaces.ActionCreator;
 import characters.interfaces.Actions;
 import characters.interfaces.Conductor;
-import characters.roles.RoleNeeds;
+import characters.needs.RoleNeedName;
 import characters.needs.Need;
-import characters.needs.NeedType;
-import characters.roles.Roles;
+import characters.needs.NeedName;
+import characters.enums.Role;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class MyCharacter implements Conductor, Actions, ActionCreator {
+public abstract class AbstractCharacter implements Conductor, Actions, ActionCreator {
     protected String name;
-    protected Enum<Roles> role;
+    protected Enum<Role> role;
     protected ArrayList<Need> needs = new ArrayList<>();
     protected ArrayList<Conductor> conductors = new ArrayList<>();
 
-    public void setNeeds(Roles role) {
-        NeedType[] needTypes = RoleNeeds.getCharacterNeeds(role);
-        List.of(needTypes).forEach(needType -> needs.add(new Need(needType)));
+    public void setNeeds(Role roles) {
+        NeedName[] needNames = RoleNeedName.getCharacterNeeds(roles);
+        List.of(needNames).forEach(needName -> needs.add(new Need(needName)));
     }
     public void showNeeds() {
         needs.forEach(System.out::println);

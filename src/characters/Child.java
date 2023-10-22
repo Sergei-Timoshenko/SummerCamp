@@ -1,14 +1,15 @@
 package characters;
 
-import actions.Action;
+import actions.AbstractAction;
 import characters.needs.Need;
-import characters.roles.Roles;
+import characters.enums.Role;
+import timeline.enums.HourCode;
 
-public class Child extends Character {
-    public Child(Roles role) {
-        this.role = role;
+public class Child extends AbstractCharacter {
+    public Child(Role roles) {
+        this.role = roles;
 
-        this.setNeeds(role);
+        this.setNeeds(roles);
     }
 
     @Override
@@ -22,12 +23,12 @@ public class Child extends Character {
     }
 
     @Override
-    public void addNewAction(Action action) {
+    public void addNewAction(AbstractAction abstractAction) {
 
     }
 
     @Override
-    public int doAction() {
+    public int doAction(HourCode hourStatus) {
         return 0;
     }
 }
