@@ -1,7 +1,7 @@
 package characters.interfaces;
 
-import timeline.schedule.HourStatuses;
+import timeline.enums.HourCode;
 
 public interface Actions {
-    public int doAction(HourStatuses hourStatus);
+    public int doAction(HourCode hourStatus);
 }

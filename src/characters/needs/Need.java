@@ -1,15 +1,15 @@
 package characters.needs;
 
 public class Need {
-    private final NeedType needType;
+    private final NeedName needName;
     private int value = 0;
 
-    public Need(NeedType needType) {
-        this.needType = needType;
+    public Need(NeedName needName) {
+        this.needName = needName;
     }
 
-    public NeedType getNeedType() {
-        return needType;
+    public NeedName getNeedType() {
+        return needName;
     }
 
     public int getValue() {
@@ -23,7 +23,7 @@ public class Need {
     @Override
     public String toString() {
         return "Need{" +
-                "needType=" + needType +
+                "needType=" + needName +
                 ", value=" + value +
                 '}';
     }

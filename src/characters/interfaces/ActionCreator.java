@@ -1,7 +1,7 @@
 package characters.interfaces;
 
-import actions.Action;
+import actions.AbstractAction;
 
 public interface ActionCreator {
-    public void addNewAction(Action action);
+    public void addNewAction(AbstractAction abstractAction);
 }
