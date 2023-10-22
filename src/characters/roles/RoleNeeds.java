@@ -1,7 +1,6 @@
 package characters.roles;
 
 import characters.needs.NeedType;
-import characters.roles.Roles;
 
 public enum RoleNeeds {
     ;
