@@ -1,5 +1,8 @@
 package characters;
 
+import characters.interfaces.ActionCreator;
+import characters.interfaces.Actions;
+import characters.interfaces.Conductor;
 import characters.roles.RoleNeeds;
 import characters.needs.Need;
 import characters.needs.NeedType;
@@ -8,11 +11,11 @@ import characters.roles.Roles;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Character {
+public abstract class Character implements Conductor, Actions, ActionCreator {
     protected String name;
     protected Enum<Roles> role;
-
     protected ArrayList<Need> needs = new ArrayList<>();
+    protected ArrayList<Conductor> conductors = new ArrayList<>();
 
     public void setNeeds(Roles role) {
         NeedType[] needTypes = RoleNeeds.getCharacterNeeds(role);
