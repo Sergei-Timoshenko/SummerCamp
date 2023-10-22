@@ -1,5 +1,6 @@
 package characters;
 
+import characters.needs.Need;
 import characters.roles.Roles;
 
 public class Child extends Character {
@@ -9,5 +10,8 @@ public class Child extends Character {
         this.setNeeds(role);
     }
 
-
+    @Override
+    public void updateNeedValue(Need need) {
+        need.setValue(10);
+    }
 }

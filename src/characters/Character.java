@@ -6,7 +6,6 @@ import characters.needs.NeedType;
 import characters.roles.Roles;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public abstract class Character {
@@ -19,8 +18,12 @@ public abstract class Character {
         NeedType[] needTypes = RoleNeeds.getCharacterNeeds(role);
         List.of(needTypes).forEach(needType -> needs.add(new Need(needType)));
     }
-
     public void showNeeds() {
         needs.forEach(System.out::println);
     }
+    public ArrayList<Need> getNeeds() {
+        return needs;
+    }
+
+    public abstract void updateNeedValue(Need need);
 }
