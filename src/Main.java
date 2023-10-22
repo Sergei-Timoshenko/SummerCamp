@@ -1,3 +1,7 @@
+import characters.Character;
+import characters.Child;
+import characters.roles.Roles;
+import timeline.Timeline;
 import characters.Cook;
 import characters.statuses.Roles;
 
@@ -11,5 +15,8 @@ public class Main {
         List<? extends Enum> actions = cook.getCharactersMethods();
         Enum randomAction = actions.get(random.nextInt(actions.size()));
         cook.doAction(randomAction);
+        Character child = new Child(Roles.CHILD);
+        child.showNeeds();
+        Timeline.run();
     }
 }
