@@ -1,5 +1,5 @@
 package actions;
 
-public enum Priority {
+public enum ActionPriority {
     URGENT, NORMAL, CANCELABLE
 }

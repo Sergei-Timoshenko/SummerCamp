@@ -1,11 +1,10 @@
 package actions;
 
 import java.util.ArrayList;
-import java.util.Timer;
 
 public abstract class Action {
     protected long startTime; // TODO: Time type
-    protected Enum<Priority> priority;
+    protected Enum<ActionPriority> priority;
     protected int minTickDuration;
     protected int maxTickDuration;
     protected int minTickPlanning;
