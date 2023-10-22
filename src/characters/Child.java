@@ -8,7 +8,6 @@ import characters.enums.TickCode;
 import characters.interfaces.Actions;
 import characters.needs.Need;
 import characters.enums.Role;
-import timeline.enums.HourCode;
 
 import javax.swing.*;
 
