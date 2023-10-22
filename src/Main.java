@@ -1,10 +1,10 @@
-import characters.Character;
+import characters.MyCharacter;
 import characters.Child;
 import characters.needs.Need;
 import characters.roles.Roles;
-import timeline.Timeline;
+import timeline.AppTimeline;
 import characters.Cook;
-import characters.statuses.Roles;
+import characters.roles.Roles;
 
 import java.util.List;
 import java.util.Random;
@@ -22,6 +22,6 @@ public class Main {
         ArrayList<Need> childNeeds = child.getNeeds();
         childNeeds.forEach(child::updateNeedValue);
         childNeeds.forEach(System.out::println);
-        Timeline.run();
+        AppTimeline.run();
     }
 }

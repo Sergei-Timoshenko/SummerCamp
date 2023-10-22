@@ -1,6 +1,6 @@
 package characters.interfaces;
 
-import characters.Character;
+import characters.MyCharacter;
 import characters.needs.Need;
 
 public interface Conductor {

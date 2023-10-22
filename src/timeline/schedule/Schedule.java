@@ -1,7 +1,7 @@
 package timeline.schedule;
 
 public class Schedule {
-    public static Enum<HourStatuses> getHourStatus(int hour) {
+    public static HourStatuses getHourStatus(int hour) {
         return switch (hour) {
             case 0, 1, 2, 3, 4, 5, 6, 22, 23 -> HourStatuses.SLEEP;
             case 7 -> HourStatuses.WAKE_UP;
