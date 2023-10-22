@@ -3,7 +3,6 @@ package characters;
 import actions.AbstractAction;
 import characters.enums.Role;
 import characters.needs.Need;
-import timeline.enums.HourCode;
 
 public class Tutor extends AbstractCharacter {
     public Tutor(Role role) {
@@ -21,12 +20,12 @@ public class Tutor extends AbstractCharacter {
     }
 
     @Override
-    public int doAction(HourCode hourStatus) {
-        return 0;
+    public void doAction(int currentTick) {
+
     }
 
     @Override
-    public void doRequest(Character character, Need need) {
+    public void doRequest(AbstractCharacter character, Need need) {
 
     }
 }
