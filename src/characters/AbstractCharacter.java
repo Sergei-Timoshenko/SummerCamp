@@ -1,5 +1,6 @@
 package characters;
 
+import actions.AbstractAction;
 import characters.interfaces.ActionCreator;
 import characters.interfaces.Actions;
 import characters.interfaces.Conductor;
@@ -12,10 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractCharacter implements Conductor, Actions, ActionCreator {
-    protected String name;
     protected Enum<Role> role;
     protected ArrayList<Need> needs = new ArrayList<>();
     protected ArrayList<Conductor> conductors = new ArrayList<>();
+    protected ArrayList<AbstractAction> actions = new ArrayList<>();
+    protected AbstractAction currentAction = null;
 
     public void setNeeds(Role roles) {
         NeedName[] needNames = RoleNeedName.getCharacterNeeds(roles);
